@@ -1,0 +1,34 @@
+Get a User by ID
+---
+parameters:
+  - in: header
+    name: Authorization
+    type: string
+    required: true
+    description: JWT token from authentication
+responses:
+  200:
+    description: Returns the user with the specified ID.
+    schema:
+      $ref: '#/definitions/User'
+  404:
+    description: User not found.
+    schema:
+      $ref: '#/definitions/Error'
+
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      email:
+        type: string
+  Error:
+    type: object
+    properties:
+      error:
+        type: string
+        

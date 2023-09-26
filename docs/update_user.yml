@@ -1,0 +1,49 @@
+Update a User
+---
+parameters:
+  - in: header
+    name: Authorization
+    type: string
+    required: true
+    description: JWT token from authentication
+  - in: body
+    name: user
+    schema:
+      $ref: '#/definitions/UserWithPassword'
+responses:
+  200:
+    description: User updated successfully.
+    schema:
+      $ref: '#/definitions/User'
+  400:
+    description: Error updating user.
+    schema:
+      $ref: '#/definitions/Error'
+  404:
+    description: User not found.
+    schema:
+      $ref: '#/definitions/Error'
+
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      email:
+        type: string
+  UserWithPassword:
+    allOf:
+      - $ref: '#/definitions/User'
+      - type: object
+        properties:
+          password:
+            type: string
+  Error:
+    type: object
+    properties:
+      error:
+        type: string
+        

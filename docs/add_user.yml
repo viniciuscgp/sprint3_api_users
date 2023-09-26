@@ -1,0 +1,38 @@
+Add a New User.
+---
+parameters:
+  - in: body
+    name: user
+    schema:
+      $ref: '#/definitions/UserWithPassword'
+responses:
+  201:
+    description: User added successfully.
+    schema:
+      $ref: '#/definitions/User'
+  400:
+    description: Error adding user.
+    schema:
+      $ref: '#/definitions/Error'
+
+definitions:
+  User:
+    type: object
+    properties:
+      name:
+        type: string
+      email:
+        type: string
+  UserWithPassword:
+    allOf:
+      - $ref: '#/definitions/User'
+      - type: object
+        properties:
+          password:
+            type: string
+  Error:
+    type: object
+    properties:
+      error:
+        type: string
+        

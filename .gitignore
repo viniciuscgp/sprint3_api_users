@@ -1,0 +1,44 @@
+# Bytecode compilado do Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info
+*.rej
+
+# Ambiente virtual
+venv/
+*.venv
+*.virtualenv
+.env/
+
+# Arquivos de log
+logs/
+*.log
+
+# Arquivos temporários
+*.bak
+*.swp
+*.swo
+
+# Arquivos de banco de dados (por exemplo, SQLite)
+*.db
+*.sqlite
+
+# Ferramentas de desenvolvimento
+.coverage
+coverage/
+htmlcov/
+*.cover
+.pytest_cache/
+.cache/
+*.egg-info/
+
+# Ambiente de desenvolvimento (VS Code, PyCharm, etc.)
+.vscode/
+.idea/
+
+# Chaves e arquivos de configuração sensíveis
+*.pem
+*.key
+*.cert
+*.cfg

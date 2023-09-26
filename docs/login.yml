@@ -1,0 +1,43 @@
+Login user
+---
+parameters:
+  - in: body
+    name: credentials
+    description: User login credentials.
+    required: true
+    schema:
+      type: object
+      properties:
+        email:
+          type: string
+          description: User's email address.
+        password:
+          type: string
+          description: User's password responses.
+responses:          
+  200:
+    description: Login successfull.
+    schema:
+      $ref: '#/definitions/Token'
+  400:
+    description: Error login.
+    schema:
+      $ref: '#/definitions/Error'
+
+  401:
+    description: Error login.
+    schema:
+      $ref: '#/definitions/Error'
+
+definitions:
+  Token:
+    type: object
+    properties:
+       token:
+          type: string
+  Error:
+    type: object
+    properties:
+      error:
+        type: string
+        
