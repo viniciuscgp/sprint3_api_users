@@ -9,7 +9,6 @@ __pycache__/
 venv/
 *.venv
 *.virtualenv
-.env/
 
 # Arquivos de log
 logs/
@@ -19,10 +18,6 @@ logs/
 *.bak
 *.swp
 *.swo
-
-# Arquivos de banco de dados (por exemplo, SQLite)
-*.db
-*.sqlite
 
 # Ferramentas de desenvolvimento
 .coverage

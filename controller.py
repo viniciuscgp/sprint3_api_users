@@ -74,7 +74,6 @@ def login():
 # --------------------------------------------------------------------------
 @app.route("/users", methods=['POST'])
 @swag_from('docs/add_user.yml')
-@requires_auth
 def add_user():
     name = request.json['name']
     email = request.json['email']
